@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<Layout title="Privacy — OpenDictation" description="OpenDictation runs entirely on your Mac. No data leaves your laptop.">
+  <Nav />
+  <main class="pt-32 pb-40 px-6">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-[clamp(32px,5vw,48px)] font-black tracking-[-0.02em] text-text leading-tight">
+        Your voice stays on your Mac.
+      </h1>
+      <p class="text-lg text-muted mt-6 leading-relaxed">
+        OpenDictation is built around a simple principle: your data is yours. Everything runs locally on your laptop — no cloud, no servers, no third parties.
+      </p>
+
+      <div class="mt-16 space-y-12">
+        <!-- Local processing -->
+        <div>
+          <h2 class="text-xl font-bold text-text">100% on-device</h2>
+          <p class="text-base text-muted mt-2 leading-relaxed">
+            All speech recognition happens directly on your Mac. Your audio never leaves your machine — not even for a millisecond. There are no network requests, no API calls, no telemetry. Just your voice and your laptop.
+          </p>
+        </div>
+
+        <!-- Model -->
+        <div>
+          <h2 class="text-xl font-bold text-text">Powered by Voxtral</h2>
+          <p class="text-base text-muted mt-2 leading-relaxed">
+            OpenDictation uses <a href="https://mistral.ai" class="text-text underline underline-offset-2 hover:text-muted transition-colors duration-150">Mistral's</a> Voxtral speech model, running entirely on your hardware. More model options are coming soon.
+          </p>
+        </div>
+
+        <!-- No data collection -->
+        <div>
+          <h2 class="text-xl font-bold text-text">No data collection</h2>
+          <p class="text-base text-muted mt-2 leading-relaxed">
+            We don't collect your audio, your transcriptions, or any usage data. There are no analytics, no tracking pixels, no cookies. We have no servers to send your data to — even if we wanted to, we couldn't.
+          </p>
+        </div>
+
+        <!-- Your notes are yours -->
+        <div>
+          <h2 class="text-xl font-bold text-text">Your notes are yours</h2>
+          <p class="text-base text-muted mt-2 leading-relaxed">
+            Every word you dictate stays on your computer. Your transcriptions are injected directly into whatever app you're using — they're never stored, logged, or cached by OpenDictation. When you close the app, there's no trace.
+          </p>
+        </div>
+
+        <!-- No account -->
+        <div>
+          <h2 class="text-xl font-bold text-text">No account required</h2>
+          <p class="text-base text-muted mt-2 leading-relaxed">
+            No sign-up, no email, no login. Download it, open it, use it. That's it.
+          </p>
+        </div>
+
+        <!-- Open source -->
+        <div>
+          <h2 class="text-xl font-bold text-text">Open source</h2>
+          <p class="text-base text-muted mt-2 leading-relaxed">
+            Don't take our word for it — <a href="https://github.com/robalaban/opendictation" class="text-text underline underline-offset-2 hover:text-muted transition-colors duration-150">read the code</a>. OpenDictation is fully open source. You can verify every line, audit every dependency, and build it yourself.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-20 pt-10 border-t border-black/[0.06]">
+        <p class="text-sm text-faint">
+          Last updated: March 2026. If you have questions, open an issue on <a href="https://github.com/robalaban/opendictation" class="text-muted hover:text-text transition-colors duration-150">GitHub</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

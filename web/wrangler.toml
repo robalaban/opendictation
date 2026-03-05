@@ -1,0 +1,8 @@
+# Cloudflare Pages configuration
+# https://developers.cloudflare.com/pages/
+
+name = "opendictation"
+pages_build_output_dir = "dist"
+
+# Compatibility settings
+compatibility_date = "2026-03-05"

@@ -1,0 +1,353 @@
+---
+
+---
+
+<section class="relative overflow-hidden">
+  <!-- Concentric sound wave rings -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none hero-rings-enter" style="top: -10%; animation-delay: 100ms;">
+    <svg class="w-[800px] h-[800px]" viewBox="0 0 800 800" fill="none">
+      <defs>
+        <linearGradient id="ring-grad" x1="0" y1="0" x2="800" y2="800" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#1D1D1F" stop-opacity="0.07" />
+          <stop offset="50%" stop-color="#86868B" stop-opacity="0.04" />
+          <stop offset="100%" stop-color="#1D1D1F" stop-opacity="0" />
+        </linearGradient>
+      </defs>
+      <circle cx="400" cy="400" r="399" stroke="url(#ring-grad)" stroke-width="1" />
+      <circle cx="400" cy="400" r="351" stroke="url(#ring-grad)" stroke-width="1" />
+      <circle cx="400" cy="400" r="303" stroke="url(#ring-grad)" stroke-width="1" />
+      <circle cx="400" cy="400" r="255" stroke="url(#ring-grad)" stroke-width="1" />
+      <circle cx="400" cy="400" r="207" stroke="url(#ring-grad)" stroke-width="1" />
+    </svg>
+  </div>
+
+  <!-- Above fold: copy + scroll indicator -->
+  <div class="min-h-screen flex flex-col items-center text-center px-6 pt-28">
+    <!-- Top spacer -->
+    <div class="flex-1"></div>
+
+    <!-- Copy -->
+    <h1 class="hero-enter text-[clamp(40px,7vw,80px)] font-black tracking-[-0.035em] leading-[0.92] max-w-4xl text-text" style="animation-delay: 200ms;">
+      Dictation that feels<br class="hidden sm:block" /> built into macOS.
+    </h1>
+
+    <p class="hero-enter text-lg md:text-xl text-muted max-w-md mt-[clamp(24px,3vw,40px)] leading-relaxed" style="animation-delay: 350ms;">
+      Press
+      <kbd class="inline-flex items-center px-2.5 py-1 text-sm font-medium text-text bg-black/[0.05] border border-black/[0.1] rounded-[8px] shadow-[0_2px_0_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] mx-0.5 align-baseline">⌥ Space</kbd>
+      to start. Press again to stop.<br class="hidden sm:block" /> Text appears where you're typing.
+    </p>
+
+    <!-- Bottom spacer -->
+    <div class="flex-1"></div>
+
+    <!-- Scroll indicator — mouse, pinned near fold -->
+    <div class="pb-10 hero-enter" style="animation-delay: 500ms;">
+      <svg class="w-6 h-10 text-faint" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="1" width="16" height="28" rx="8" />
+        <line x1="12" y1="8" x2="12" y2="14" class="animate-[scroll-dot_2s_ease-in-out_infinite]" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Interactive pill demo — MacBook screen mockup -->
+  <div
+    id="demo"
+    class="reveal mt-[clamp(40px,5vw,64px)] pb-16 w-full max-w-5xl mx-auto px-6 scroll-mt-20"
+    x-data="dictationPill()"
+  >
+    <div class="relative">
+      <!-- Screen area -->
+      <div
+        role="button"
+        tabindex="0"
+        aria-label="Interactive demo — click or press Enter to advance"
+        class="relative overflow-hidden rounded-[20px] cursor-pointer select-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+        style="height: clamp(360px, 50vw, 600px);"
+        @click="toggle()"
+        @keydown.enter.prevent="toggle()"
+        @keydown.space.prevent="toggle()"
+      >
+        <!-- Monterey/Sequoia wallpaper (purple/blue tones) -->
+        <div class="absolute inset-0" style="background:
+          radial-gradient(ellipse 80% 60% at 30% 70%, rgba(140,60,100,0.8), transparent),
+          radial-gradient(ellipse 70% 50% at 70% 80%, rgba(90,40,120,0.6), transparent),
+          radial-gradient(ellipse 100% 80% at 50% 100%, rgba(80,30,60,0.7), transparent),
+          linear-gradient(to bottom, #1a1050 0%, #2a1870 30%, #3d2080 50%, #4a2580 70%, #3a1a60 100%)
+        ;"></div>
+
+        <!-- Pill — positioned near the top, centered -->
+        <div class="absolute left-1/2 -translate-x-1/2 z-20" style="top: clamp(16px, 3vw, 28px);">
+          <div
+            class="pill-glass transition-[padding] duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+            :class="state === 'success' ? 'p-[10px]' : 'px-4 py-[10px]'"
+          >
+            <!-- Loading -->
+            <template x-if="state === 'ready'">
+              <div class="flex items-center gap-2.5 animate-fade-in">
+                <svg class="w-[16px] h-[16px] text-white/70 animate-spin-slow" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="1 1.4" stroke-linecap="round" />
+                </svg>
+                <span class="text-[13px] font-medium text-white/[0.92]">Loading</span>
+              </div>
+            </template>
+
+            <!-- Listening -->
+            <template x-if="state === 'listening'">
+              <div class="flex items-center gap-2 animate-fade-in">
+                <div class="flex items-center gap-[2.5px] w-[18px] h-[18px] justify-center">
+                  <div class="w-[3px] h-[5px] rounded-full bg-white listen-bar-sm origin-center"></div>
+                  <div class="w-[3px] h-[7px] rounded-full bg-white listen-bar-lg origin-center" style="animation-delay:0.25s"></div>
+                  <div class="w-[3px] h-[7px] rounded-full bg-white listen-bar-lg origin-center" style="animation-delay:0.5s"></div>
+                  <div class="w-[3px] h-[5px] rounded-full bg-white listen-bar-sm origin-center" style="animation-delay:0.75s"></div>
+                </div>
+                <span class="text-[13px] font-medium text-white/[0.92]">Listening</span>
+              </div>
+            </template>
+
+            <!-- Processing -->
+            <template x-if="state === 'processing'">
+              <div class="flex items-center gap-2 animate-fade-in">
+                <div class="flex items-center gap-[1.5px] w-[16px] h-[16px] justify-center">
+                  <div class="w-[2px] rounded-full bg-white var-color-bar" style="height:5px"></div>
+                  <div class="w-[2px] rounded-full bg-white var-color-bar" style="height:9px;animation-delay:0.3s"></div>
+                  <div class="w-[2px] rounded-full bg-white var-color-bar" style="height:14px;animation-delay:0.6s"></div>
+                  <div class="w-[2px] rounded-full bg-white var-color-bar" style="height:9px;animation-delay:0.9s"></div>
+                  <div class="w-[2px] rounded-full bg-white var-color-bar" style="height:5px;animation-delay:1.2s"></div>
+                </div>
+                <span class="text-[13px] font-medium text-white/[0.92]">Processing</span>
+              </div>
+            </template>
+
+            <!-- Success -->
+            <template x-if="state === 'success'">
+              <div class="animate-success-pop flex items-center justify-center">
+                <svg class="w-[14px] h-[14px] text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <!-- iMessage window -->
+        <div x-show="activeApp === 'messages'" x-transition.opacity.duration.200ms class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%] z-10 w-[60%] max-w-[440px]">
+          <div class="rounded-[10px] overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
+            <!-- iMessage title bar -->
+            <div class="bg-[#f6f6f6]/95 backdrop-blur-md h-[40px] flex items-center border-b border-black/[0.06] relative px-3">
+              <div class="flex items-center gap-[6px]">
+                <div class="w-[10px] h-[10px] rounded-full bg-[#ff5f57]"></div>
+                <div class="w-[10px] h-[10px] rounded-full bg-[#febc2e]"></div>
+                <div class="w-[10px] h-[10px] rounded-full bg-[#28c840]"></div>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-[20px] h-[20px] rounded-full bg-[#007aff] flex items-center justify-center">
+                    <span class="text-[9px] font-bold text-white leading-none">A</span>
+                  </div>
+                  <span class="text-[12px] font-semibold text-[#1a1a1a]">Alex</span>
+                </div>
+              </div>
+            </div>
+            <!-- Chat body -->
+            <div class="bg-white px-2.5 py-2.5 flex flex-col gap-[3px]" style="min-height: clamp(100px, 14vw, 180px);">
+              <div class="self-start">
+                <div class="bg-[#e9e9eb] text-[#1a1a1a] text-[13px] leading-[1.35] px-[10px] py-[6px] rounded-[18px] rounded-bl-[4px]">
+                  Can we meet tomorrow?
+                </div>
+              </div>
+              <div class="self-end" x-cloak x-show="sent" x-transition.opacity.duration.200ms>
+                <div class="bg-[#007aff] text-white text-[13px] leading-[1.35] px-[10px] py-[6px] rounded-[18px] rounded-br-[4px]" x-text="sentText"></div>
+              </div>
+            </div>
+            <!-- Input bar -->
+            <div class="bg-[#f6f6f6]/95 backdrop-blur-md px-2.5 py-1.5 border-t border-black/[0.06] flex items-center gap-2">
+              <div class="flex-1 bg-white border border-black/[0.1] rounded-full px-3 py-1.5 text-[12px] min-h-[28px] flex items-center">
+                <span x-show="inputText.length === 0 && !sent" class="text-[#c7c7cc]">iMessage</span>
+                <span x-cloak x-show="inputText.length > 0" class="text-[#1a1a1a]" x-text="inputText"></span>
+              </div>
+              <div
+                class="w-[24px] h-[24px] rounded-full flex items-center justify-center flex-shrink-0 transition-opacity duration-150"
+                :class="inputText.length > 0 ? 'bg-[#007aff] opacity-100' : 'bg-[#007aff] opacity-30'"
+              >
+                <svg class="w-[13px] h-[13px] text-white -rotate-90" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal window -->
+        <div x-cloak x-show="activeApp === 'terminal'" x-transition.opacity.duration.200ms class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%] z-10 w-[60%] max-w-[440px]">
+          <div class="rounded-[10px] overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
+            <!-- Terminal title bar -->
+            <div class="bg-[#2a2a2a] h-[40px] flex items-center relative px-3">
+              <div class="flex items-center gap-[6px]">
+                <div class="w-[10px] h-[10px] rounded-full bg-[#ff5f57]"></div>
+                <div class="w-[10px] h-[10px] rounded-full bg-[#febc2e]"></div>
+                <div class="w-[10px] h-[10px] rounded-full bg-[#28c840]"></div>
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span class="text-[12px] text-white/40 font-medium">Terminal</span>
+              </div>
+            </div>
+            <!-- Terminal body -->
+            <div class="bg-[#1a1a1a] px-3 py-2.5 font-mono text-[13px]" style="min-height: clamp(100px, 14vw, 180px);">
+              <div class="leading-relaxed">
+                <span class="text-[#28c840]">~</span><span class="text-white/50"> $ </span><span class="text-white/90">git commit -m "</span><span class="text-white/90" x-text="sent ? sentText : inputText"></span><span x-cloak x-show="sent" class="text-white/90">"</span>
+                <span x-show="!sent && state !== 'ready'" class="inline-block w-[7px] h-[14px] bg-white/60 align-middle ml-px"></span>
+              </div>
+              <div x-cloak x-show="sent" x-transition.opacity.duration.150ms class="mt-1.5 leading-relaxed">
+                <div class="text-white/50">[main a3f7b21] add feature to stream live audio to cursor location</div>
+                <div class="text-white/50 text-[12px]"> 2 files changed, 14 insertions(+), 3 deletions(-)</div>
+                <div class="mt-1.5">
+                  <span class="text-[#28c840]">~</span><span class="text-white/50"> $</span>
+                  <span class="inline-block w-[7px] h-[14px] bg-white/60 align-middle ml-1.5"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dock -->
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20" @click.stop>
+          <div class="flex items-end gap-1.5 bg-white/[0.12] backdrop-blur-xl border border-white/[0.15] rounded-[14px] px-1.5 py-1.5">
+            <!-- Messages -->
+            <button
+              @click="switchApp('messages')"
+              aria-label="Switch to Messages"
+              class="flex flex-col items-center gap-1 cursor-pointer group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-[8px]"
+            >
+              <div
+                class="w-[36px] h-[36px] rounded-[8px] flex items-center justify-center shadow-md transition-transform duration-150 group-hover:-translate-y-1 bg-[#34C759]"
+              >
+                <svg class="w-[20px] h-[20px] text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm0 15.17L18.83 16H4V4h16v13.17z" fill="none"/>
+                  <path d="M2 4c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v18l-4-4H4c-1.1 0-2-.9-2-2V4z"/>
+                </svg>
+              </div>
+              <div class="w-1 h-1 rounded-full transition-colors duration-150" :class="activeApp === 'messages' ? 'bg-white/80' : 'bg-transparent'"></div>
+            </button>
+            <!-- Terminal -->
+            <button
+              @click="switchApp('terminal')"
+              aria-label="Switch to Terminal"
+              class="flex flex-col items-center gap-1 cursor-pointer group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white rounded-[8px]"
+            >
+              <div
+                class="w-[36px] h-[36px] rounded-[8px] flex items-center justify-center shadow-md transition-transform duration-150 group-hover:-translate-y-1 bg-[#1a1a1a] border border-white/[0.08]"
+              >
+                <span class="text-white font-mono text-[13px] font-bold leading-none">&#x3e;_</span>
+              </div>
+              <div class="w-1 h-1 rounded-full transition-colors duration-150" :class="activeApp === 'terminal' ? 'bg-white/80' : 'bg-transparent'"></div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script is:inline>
+  function dictationPill() {
+    return {
+      activeApp: 'messages',
+      state: 'ready',
+      timer: null,
+      typeTimer: null,
+      inputText: '',
+      sentText: '',
+      sent: false,
+      wordIndex: 0,
+      appWords: {
+        messages: ['Sure,', "let's", 'schedule', 'a', 'meeting', 'for', 'tomorrow,', '2PM.'],
+        terminal: ['add', 'feature', 'to', 'stream', 'live', 'audio', 'to', 'cursor', 'location'],
+      },
+      sequence: ['ready', 'listening', 'processing', 'success'],
+      durations: {
+        ready: 800,
+        listening: 2800,
+        processing: 800,
+        success: 1400,
+      },
+
+      init() {
+        this.scheduleNext()
+      },
+
+      switchApp(app) {
+        if (app === this.activeApp) return
+        clearTimeout(this.timer)
+        this.stopTyping()
+        this.activeApp = app
+        this.state = 'ready'
+        this.inputText = ''
+        this.sentText = ''
+        this.sent = false
+        this.wordIndex = 0
+        this.scheduleNext()
+      },
+
+      scheduleNext() {
+        clearTimeout(this.timer)
+        if (this.state === 'listening') {
+          this.startTyping()
+        }
+        this.timer = setTimeout(() => this.advance(), this.durations[this.state])
+      },
+
+      startTyping() {
+        this.wordIndex = 0
+        this.inputText = ''
+        this.sent = false
+        this.sentText = ''
+        this.typeNextWord()
+      },
+
+      typeNextWord() {
+        var words = this.appWords[this.activeApp]
+        if (this.wordIndex < words.length && this.state === 'listening') {
+          this.inputText = words.slice(0, this.wordIndex + 1).join(' ')
+          this.wordIndex++
+          this.typeTimer = setTimeout(() => this.typeNextWord(), 280)
+        }
+      },
+
+      stopTyping() {
+        clearTimeout(this.typeTimer)
+      },
+
+      sendMessage() {
+        if (this.inputText.length > 0) {
+          this.sentText = this.inputText
+          this.inputText = ''
+          this.sent = true
+        }
+      },
+
+      advance() {
+        this.stopTyping()
+        var idx = this.sequence.indexOf(this.state)
+        var nextState = this.sequence[(idx + 1) % this.sequence.length]
+        if (nextState === 'processing') {
+          this.sendMessage()
+        }
+        if (nextState === 'ready') {
+          this.inputText = ''
+          this.sentText = ''
+          this.sent = false
+          this.wordIndex = 0
+        }
+        this.state = nextState
+        this.scheduleNext()
+      },
+
+      toggle() {
+        clearTimeout(this.timer)
+        this.advance()
+      },
+    }
+  }
+</script>

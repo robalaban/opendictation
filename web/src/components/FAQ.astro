@@ -1,0 +1,52 @@
+---
+const faqs = [
+  {
+    question: 'What permissions does it need?',
+    answer: 'OpenDictation needs microphone access to hear your voice, and accessibility permissions to insert text at your cursor. All permissions are requested on first launch, and you can manage them in System Settings.',
+  },
+  {
+    question: 'Is my audio sent anywhere?',
+    answer: "No. All speech recognition runs locally on your Mac using the Voxtral model. Your audio never leaves your device, and nothing is stored after transcription. See our <a href='/privacy' class='text-text underline underline-offset-2 hover:text-muted transition-colors duration-150'>privacy page</a> for details.",
+  },
+  {
+    question: 'What languages are supported?',
+    answer: 'OpenDictation currently supports English, Spanish, French, Portuguese, German, Dutch, and Italian via the Voxtral model. More languages are planned.',
+  },
+  {
+    question: 'Does it work in every app?',
+    answer: 'Yes. OpenDictation injects text at your cursor position using macOS accessibility APIs, so it works in any text field — browsers, editors, messaging apps, terminals, and more.',
+  },
+  {
+    question: 'Can I change the hotkey?',
+    answer: 'Absolutely. The default is ⌥ Space, but you can remap it to any key combination in the app\'s preferences.',
+  },
+]
+---
+
+<section id="faq" class="py-24 px-6 scroll-mt-20">
+  <h2 class="text-3xl md:text-4xl font-black tracking-tight text-center mb-20 text-text">Questions</h2>
+
+  <div class="max-w-2xl mx-auto reveal" x-data="{ open: null }">
+    {faqs.map((faq, i) => (
+      <div class="border-b border-black/[0.08]">
+        <button
+          @click={`open = open === ${i} ? null : ${i}`}
+          class="w-full flex justify-between items-center py-6 text-left cursor-pointer group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-lg"
+        >
+          <span class="text-base font-semibold pr-4 text-text group-hover:text-text/70 transition-colors duration-150">{faq.question}</span>
+          <span
+            class="text-muted transition-transform duration-200 shrink-0 text-xl font-light"
+            :class={`open === ${i} && 'rotate-45'`}
+          >+</span>
+        </button>
+        <div
+          x-show={`open === ${i}`}
+          x-collapse.duration.300ms
+          class="pb-6 text-[15px] text-muted leading-relaxed"
+        >
+          <Fragment set:html={faq.answer} />
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

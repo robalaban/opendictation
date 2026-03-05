@@ -1,0 +1,34 @@
+# Astro
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# pnpm
+.pnpm-store/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Cloudflare
+.wrangler/
+
+# Nix
+result
+.direnv/
+
+# Claude
+CLAUDE.md
+docs/
