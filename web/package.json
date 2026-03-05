@@ -9,6 +9,9 @@
     "deploy": "wrangler pages deploy dist",
     "astro": "astro"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": ["sharp", "esbuild"]
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",
