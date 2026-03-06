@@ -33,11 +33,11 @@ const supportingFeatures = [
 ]
 ---
 
-<section class="pt-32 pb-40 px-6">
+<section class="pt-16 pb-20 sm:pt-32 sm:pb-40 px-6">
   <!-- Lead features — dramatic, full-width -->
   <div class="max-w-3xl mx-auto">
     {leadFeatures.map((feature, i) => (
-      <div class="reveal mb-20 last:mb-0" style={`transition-delay: ${i * 100}ms`}>
+      <div class="reveal mb-10 sm:mb-20 last:mb-0" style={`transition-delay: ${i * 100}ms`}>
         <div class="flex items-baseline gap-4 flex-wrap">
           <h3 class="text-[clamp(28px,4.5vw,48px)] font-black tracking-[-0.02em] text-text leading-[1.05]">{feature.title}</h3>
           {feature.chip && (
@@ -50,7 +50,7 @@ const supportingFeatures = [
   </div>
 
   <!-- Supporting features — compact, lighter -->
-  <div class="max-w-3xl mx-auto mt-24 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+  <div class="max-w-3xl mx-auto mt-14 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
     {supportingFeatures.map((feature, i) => (
       <div class="reveal" style={`transition-delay: ${(i + 2) * 80}ms`}>
         <div class="flex items-center gap-2">

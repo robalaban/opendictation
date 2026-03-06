@@ -22,7 +22,7 @@
   </div>
 
   <!-- Above fold: copy + scroll indicator -->
-  <div class="min-h-screen flex flex-col items-center text-center px-6 pt-28">
+  <div class="min-h-screen flex flex-col items-center text-center px-6 pt-20 sm:pt-28">
     <!-- Top spacer -->
     <div class="flex-1"></div>
 
@@ -62,7 +62,7 @@
         tabindex="0"
         aria-label="Interactive demo — click or press Enter to advance"
         class="relative overflow-hidden rounded-[20px] cursor-pointer select-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-        style="height: clamp(360px, 50vw, 600px);"
+        style="height: clamp(300px, 50vw, 600px);"
         @click="toggle()"
         @keydown.enter.prevent="toggle()"
         @keydown.space.prevent="toggle()"
@@ -129,8 +129,8 @@
           </div>
         </div>
 
-        <!-- iMessage window -->
-        <div x-show="activeApp === 'messages'" x-transition.opacity.duration.200ms class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%] z-10 w-[60%] max-w-[440px]">
+        <!-- iMessage window (always visible on mobile, toggleable on sm+) -->
+        <div id="demo-imessage" x-show="activeApp === 'messages'" x-transition.opacity.duration.200ms class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%] z-10 w-[80%] sm:w-[60%] max-w-[440px]">
           <div class="rounded-[10px] overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
             <!-- iMessage title bar -->
             <div class="bg-[#f6f6f6]/95 backdrop-blur-md h-[40px] flex items-center border-b border-black/[0.06] relative px-3">
@@ -177,8 +177,8 @@
           </div>
         </div>
 
-        <!-- Terminal window -->
-        <div x-cloak x-show="activeApp === 'terminal'" x-transition.opacity.duration.200ms class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%] z-10 w-[60%] max-w-[440px]">
+        <!-- Terminal window (hidden on mobile) -->
+        <div x-cloak x-show="activeApp === 'terminal'" x-transition.opacity.duration.200ms class="hidden sm:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%] z-10 w-[80%] sm:w-[60%] max-w-[440px]">
           <div class="rounded-[10px] overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.4)]">
             <!-- Terminal title bar -->
             <div class="bg-[#2a2a2a] h-[40px] flex items-center relative px-3">
@@ -209,8 +209,8 @@
           </div>
         </div>
 
-        <!-- Dock -->
-        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20" @click.stop>
+        <!-- Dock (hidden on mobile) -->
+        <div class="hidden sm:block absolute bottom-3 left-1/2 -translate-x-1/2 z-20" @click.stop>
           <div class="flex items-end gap-1.5 bg-white/[0.12] backdrop-blur-xl border border-white/[0.15] rounded-[14px] px-1.5 py-1.5">
             <!-- Messages -->
             <button
@@ -351,3 +351,12 @@
     }
   }
 </script>
+
+<style>
+  /* Force iMessage visible on mobile regardless of Alpine x-show */
+  @media (max-width: 639px) {
+    #demo-imessage {
+      display: block !important;
+    }
+  }
+</style>
