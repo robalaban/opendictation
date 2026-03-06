@@ -2,13 +2,17 @@
 const links = [
   { label: 'Privacy', href: '/privacy' },
   { label: 'GitHub', href: 'https://github.com/robalaban/opendictation' },
-  { label: 'Bluesky', href: 'https://bsky.app/profile/robertbalaban.bsky.social', icon: 'bluesky' },
+  { label: 'Bluesky', href: 'https://bsky.app/profile/robertbalaban.com', icon: 'bluesky' },
 ]
 ---
 
 <footer class="py-12 px-6 border-t border-black/[0.06]">
   <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-    <span class="text-sm text-faint">&copy; 2026 OpenDictation</span>
+    <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-3 text-sm text-faint">
+      <span>&copy; 2026 OpenDictation</span>
+      <span class="hidden sm:inline" aria-hidden="true">&middot;</span>
+      <span>Made in Europe by <a href="https://robertbalaban.com" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors duration-150">robertbalaban</a></span>
+    </div>
     <nav class="flex gap-6">
       {links.map((link) => (
         <a href={link.href} {...(link.href.startsWith('http') ? { rel: 'noopener noreferrer' } : {})} class="text-sm text-muted hover:text-text transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-sm inline-flex items-center gap-1.5">
