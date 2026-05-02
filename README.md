@@ -69,7 +69,7 @@ Two ways to get OpenDictation: download a pre-built DMG (easiest) or build it yo
 4. Grant **Microphone** and **Accessibility** permissions when prompted (Accessibility is what lets OpenDictation paste text into other apps).
 5. The first-launch onboarding will walk you through downloading the Voxtral model from Hugging Face (~4 GB, one time). After that, no data ever leaves your Mac.
 
-> Why isn't the DMG signed? An Apple Developer account ($99/year) is required to sign and notarize Mac apps. Once that's in place, releases will be properly signed and these workarounds will go away.
+> Why isn't the DMG signed? Currently in the process of getting an Apple Developer account and notarizing the app, but in the meantime I wanted to make it available for early testers. The unsigned DMG is a temporary compromise — it just adds an extra click to bypass the security warning on first launch, but after that it behaves like a normal app. If you have any concerns or questions about this, please reach out!
 
 ### Option 2 — Build from source
 
@@ -96,6 +96,10 @@ For deeper architecture notes and engineering conventions, see [`CONTRIBUTING.md
 ## Mac App Store
 
 A paid version with auto-updates and extra polish will also be available on the Mac App Store. The source here is and will remain Apache-2.0 — the App Store build exists purely as a convenience option.
+
+## A note on how this was built
+
+OpenDictation was co-created with the help of AI coding assistants. Code, design decisions, and documentation in this repository were produced collaboratively between a human author and AI tools, then reviewed, tested, and committed by the human author. Mentioning it here so it's transparent — the project is open source and you can read every line yourself.
 
 ## License
 

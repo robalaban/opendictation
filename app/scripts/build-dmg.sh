@@ -29,7 +29,10 @@ mkdir -p "$DMG_DIR"
 cp -R "$APP_PATH" "$DMG_DIR/"
 ln -s /Applications "$DMG_DIR/Applications"
 
-VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$APP_PATH/Contents/Info.plist")
+VERSION=$(git -C "$PROJECT_DIR" rev-parse --short HEAD)
+if ! git -C "$PROJECT_DIR" diff-index --quiet HEAD -- 2>/dev/null; then
+  VERSION="$VERSION-dirty"
+fi
 DMG_PATH="$BUILD_DIR/$APP_NAME-$VERSION.dmg"
 
 hdiutil create \
