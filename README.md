@@ -54,21 +54,48 @@ Read the full [privacy policy](https://opendictation.com/privacy).
 - Microphone access permission
 - Accessibility permission (to insert text at your cursor)
 
-## Building from source
+## Install
 
-OpenDictation is open source. To build it yourself:
+Two ways to get OpenDictation: download a pre-built DMG (easiest) or build it yourself from source.
 
-1. Clone the repo and open `app/OpenDictation.xcodeproj` in Xcode.
-2. In **Signing & Capabilities**, set the **Team** to your own Apple ID.
-3. Press **⌘R** to build and run.
+### Option 1 — Install the DMG (recommended)
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for full build details, architecture notes, and engineering conventions.
+1. Download the latest `.dmg` from this repository's [GitHub Releases page](../../releases).
+2. Open the DMG and drag **OpenDictation** into your `Applications` folder.
+3. **First launch will be blocked.** macOS will say "OpenDictation can't be opened because Apple cannot check it for malicious software." This is expected — the DMG is unsigned. Bypass it one of three ways:
+   - **Right-click** OpenDictation in `/Applications` → **Open** → click **Open Anyway** in the dialog.
+   - Or: open **System Settings → Privacy & Security**, scroll to the message about OpenDictation being blocked, and click **Open Anyway**.
+   - Or, from Terminal: `xattr -dr com.apple.quarantine /Applications/OpenDictation.app`
+4. Grant **Microphone** and **Accessibility** permissions when prompted (Accessibility is what lets OpenDictation paste text into other apps).
+5. The first-launch onboarding will walk you through downloading the Voxtral model from Hugging Face (~4 GB, one time). After that, no data ever leaves your Mac.
 
-## Releases
+> Why isn't the DMG signed? An Apple Developer account ($99/year) is required to sign and notarize Mac apps. Once that's in place, releases will be properly signed and these workarounds will go away.
 
-Pre-built, signed, notarized DMG releases will be published on this repository's GitHub Releases page once the project's Apple Developer account is set up. Until then, build from source.
+### Option 2 — Build from source
 
-A paid version with auto-updates and additional polish will also be available on the Mac App Store. The source here is and will remain Apache-2.0; the App Store version exists purely as a convenience option.
+Requires macOS (Apple Silicon strongly recommended), **Xcode 16+**, and a free Apple ID for local code signing.
+
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/<your-fork>/opendictation.git
+   cd opendictation
+   ```
+2. Open `app/OpenDictation.xcodeproj` in Xcode.
+3. In the **Signing & Capabilities** tab, change **Team** to your own Apple ID team. The repo ships with the maintainer's team ID; your local build won't sign until you swap in your own.
+4. Press **⌘R**. Xcode will compile the Swift app *and* the bundled `voxtral` C helper (a Run Script phase invokes `make mps` automatically).
+5. Grant **Microphone** and **Accessibility** permissions when prompted.
+6. Onboarding will walk you through downloading the Voxtral model from Hugging Face (~4 GB).
+
+**Troubleshooting:**
+
+- **"voxtral binary not found in app bundle"** — the Run Script phase that builds the C helper failed. Run it manually to see the error: `cd app/Vendor/voxtral && make mps`.
+- **Accessibility permission seems missing after a clean build** — macOS keys accessibility permission to a specific binary path. After a clean rebuild the path changes, so grant access again in **System Settings → Privacy & Security → Accessibility**.
+
+For deeper architecture notes and engineering conventions, see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## Mac App Store
+
+A paid version with auto-updates and extra polish will also be available on the Mac App Store. The source here is and will remain Apache-2.0 — the App Store build exists purely as a convenience option.
 
 ## License
 
