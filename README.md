@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://opendictation.com">Website</a> · <a href="https://opendictation.com/privacy">Privacy</a>
+  <a href="https://opendictation.org">Website</a> · <a href="https://opendictation.org/privacy">Privacy</a>
 </p>
 
 ---
@@ -46,7 +46,7 @@ OpenDictation is built with a strict no-data-collection policy:
 - No account required
 - Transcriptions are injected directly into your active app and never stored
 
-Read the full [privacy policy](https://opendictation.com/privacy).
+Read the full [privacy policy](https://opendictation.org/privacy).
 
 ## Requirements
 
