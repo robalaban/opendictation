@@ -1,34 +1,8 @@
-# Astro
-dist/
-.astro/
-
-# Dependencies
-node_modules/
-
-# pnpm
-.pnpm-store/
-
-# Environment
-.env
-.env.*
-!.env.example
-
-# OS
-.DS_Store
+# Web-specific overrides. Most patterns now live in the repo-root .gitignore.
 Thumbs.db
 
-# Editor
-*.swp
-*.swo
-*~
-
-# Cloudflare
-.wrangler/
-
-# Nix
-result
-.direnv/
-
-# Claude
+# Local marketing-site working notes (web-only, kept out of the public repo).
+# The app's own CLAUDE.md and docs are intentionally tracked — see app/CLAUDE.md.
 CLAUDE.md
 docs/
+

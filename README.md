@@ -56,8 +56,20 @@ Read the full [privacy policy](https://opendictation.com/privacy).
 
 ## Building from source
 
-_Build instructions coming soon._
+OpenDictation is open source. To build it yourself:
+
+1. Clone the repo and open `app/OpenDictation.xcodeproj` in Xcode.
+2. In **Signing & Capabilities**, set the **Team** to your own Apple ID.
+3. Press **⌘R** to build and run.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for full build details, architecture notes, and engineering conventions.
+
+## Releases
+
+Pre-built, signed, notarized DMG releases will be published on this repository's GitHub Releases page once the project's Apple Developer account is set up. Until then, build from source.
+
+A paid version with auto-updates and additional polish will also be available on the Mac App Store. The source here is and will remain Apache-2.0; the App Store version exists purely as a convenience option.
 
 ## License
 
-Open source. See [LICENSE](LICENSE) for details.
+OpenDictation is licensed under the [Apache License 2.0](LICENSE). It bundles a vendored copy of [`antirez/voxtral.c`](https://github.com/antirez/voxtral.c), which remains under its own MIT License — see [`NOTICE`](NOTICE) and [`app/Vendor/voxtral/LICENSE.upstream`](app/Vendor/voxtral/LICENSE.upstream).

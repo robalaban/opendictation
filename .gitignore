@@ -1,0 +1,48 @@
+# macOS
+.DS_Store
+
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/
+Package.resolved
+
+# Voxtral build artifacts
+app/Vendor/voxtral/*.o
+app/Vendor/voxtral/*.mps.o
+app/Vendor/voxtral/voxtral
+
+# Local AI tooling settings
+.claude/settings.local.json
+**/.claude/settings.local.json
+
+# Local plan / design docs (kept out of public repo)
+/docs/plans/
+
+# Web (Astro / Cloudflare / pnpm / env)
+node_modules/
+dist/
+.astro/
+.wrangler/
+.pnpm-store/
+.env
+.env.*
+!.env.example
+
+# Nix / direnv
+.direnv/
+result
+
+# Editor
+*.swp
+*.swo
+*~

@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		E1CD65082F499E0800DCD9EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1CD64F02F499E0700DCD9EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1CD64F72F499E0700DCD9EC;
+			remoteInfo = OpenDictation;
+		};
+		E1CD65122F499E0800DCD9EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1CD64F02F499E0700DCD9EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1CD64F72F499E0700DCD9EC;
+			remoteInfo = OpenDictation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E1CD64F82F499E0700DCD9EC /* OpenDictation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenDictation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1CD65072F499E0800DCD9EC /* OpenDictationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenDictationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1CD65112F499E0800DCD9EC /* OpenDictationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenDictationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E1CD64FA2F499E0700DCD9EC /* OpenDictation */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OpenDictation;
+			sourceTree = "<group>";
+		};
+		E1CD650A2F499E0800DCD9EC /* OpenDictationTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OpenDictationTests;
+			sourceTree = "<group>";
+		};
+		E1CD65142F499E0800DCD9EC /* OpenDictationUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OpenDictationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1CD64F52F499E0700DCD9EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CD65042F499E0800DCD9EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CD650E2F499E0800DCD9EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1CD64EF2F499E0700DCD9EC = {
+			isa = PBXGroup;
+			children = (
+				E1CD64FA2F499E0700DCD9EC /* OpenDictation */,
+				E1CD650A2F499E0800DCD9EC /* OpenDictationTests */,
+				E1CD65142F499E0800DCD9EC /* OpenDictationUITests */,
+				E1CD64F92F499E0700DCD9EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1CD64F92F499E0700DCD9EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1CD64F82F499E0700DCD9EC /* OpenDictation.app */,
+				E1CD65072F499E0800DCD9EC /* OpenDictationTests.xctest */,
+				E1CD65112F499E0800DCD9EC /* OpenDictationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1CD64F72F499E0700DCD9EC /* OpenDictation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1CD651B2F499E0800DCD9EC /* Build configuration list for PBXNativeTarget "OpenDictation" */;
+			buildPhases = (
+				CC00AA012F500001000000A1 /* Build Voxtral */,
+				E1CD64F42F499E0700DCD9EC /* Sources */,
+				E1CD64F52F499E0700DCD9EC /* Frameworks */,
+				E1CD64F62F499E0700DCD9EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E1CD64FA2F499E0700DCD9EC /* OpenDictation */,
+			);
+			name = OpenDictation;
+			packageProductDependencies = (
+			);
+			productName = OpenDictation;
+			productReference = E1CD64F82F499E0700DCD9EC /* OpenDictation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E1CD65062F499E0800DCD9EC /* OpenDictationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1CD651E2F499E0800DCD9EC /* Build configuration list for PBXNativeTarget "OpenDictationTests" */;
+			buildPhases = (
+				E1CD65032F499E0800DCD9EC /* Sources */,
+				E1CD65042F499E0800DCD9EC /* Frameworks */,
+				E1CD65052F499E0800DCD9EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1CD65092F499E0800DCD9EC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E1CD650A2F499E0800DCD9EC /* OpenDictationTests */,
+			);
+			name = OpenDictationTests;
+			packageProductDependencies = (
+			);
+			productName = OpenDictationTests;
+			productReference = E1CD65072F499E0800DCD9EC /* OpenDictationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E1CD65102F499E0800DCD9EC /* OpenDictationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1CD65212F499E0800DCD9EC /* Build configuration list for PBXNativeTarget "OpenDictationUITests" */;
+			buildPhases = (
+				E1CD650D2F499E0800DCD9EC /* Sources */,
+				E1CD650E2F499E0800DCD9EC /* Frameworks */,
+				E1CD650F2F499E0800DCD9EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1CD65132F499E0800DCD9EC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E1CD65142F499E0800DCD9EC /* OpenDictationUITests */,
+			);
+			name = OpenDictationUITests;
+			packageProductDependencies = (
+			);
+			productName = OpenDictationUITests;
+			productReference = E1CD65112F499E0800DCD9EC /* OpenDictationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1CD64F02F499E0700DCD9EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					E1CD64F72F499E0700DCD9EC = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					E1CD65062F499E0800DCD9EC = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = E1CD64F72F499E0700DCD9EC;
+					};
+					E1CD65102F499E0800DCD9EC = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = E1CD64F72F499E0700DCD9EC;
+					};
+				};
+			};
+			buildConfigurationList = E1CD64F32F499E0700DCD9EC /* Build configuration list for PBXProject "OpenDictation" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1CD64EF2F499E0700DCD9EC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E1CD64F92F499E0700DCD9EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1CD64F72F499E0700DCD9EC /* OpenDictation */,
+				E1CD65062F499E0800DCD9EC /* OpenDictationTests */,
+				E1CD65102F499E0800DCD9EC /* OpenDictationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1CD64F62F499E0700DCD9EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CD65052F499E0800DCD9EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CD650F2F499E0800DCD9EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CC00AA012F500001000000A1 /* Build Voxtral */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Voxtral";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "cd \"$SRCROOT/Vendor/voxtral\"\nmake mps\ncp voxtral \"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/voxtral\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1CD64F42F499E0700DCD9EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CD65032F499E0800DCD9EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1CD650D2F499E0800DCD9EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E1CD65092F499E0800DCD9EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1CD64F72F499E0700DCD9EC /* OpenDictation */;
+			targetProxy = E1CD65082F499E0800DCD9EC /* PBXContainerItemProxy */;
+		};
+		E1CD65132F499E0800DCD9EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E1CD64F72F499E0700DCD9EC /* OpenDictation */;
+			targetProxy = E1CD65122F499E0800DCD9EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E1CD65192F499E0800DCD9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3DPN5PTS7D;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E1CD651A2F499E0800DCD9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3DPN5PTS7D;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		E1CD651C2F499E0800DCD9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OpenDictation/OpenDictation.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DPN5PTS7D;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OpenDictation/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.calysis.OpenDictation;
+				PRODUCT_NAME = OpenDictation;
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E1CD651D2F499E0800DCD9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OpenDictation/OpenDictation.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DPN5PTS7D;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OpenDictation/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.calysis.OpenDictation;
+				PRODUCT_NAME = OpenDictation;
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E1CD651F2F499E0800DCD9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DPN5PTS7D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.calysis.OpenDictationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenDictation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenDictation";
+			};
+			name = Debug;
+		};
+		E1CD65202F499E0800DCD9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DPN5PTS7D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.calysis.OpenDictationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenDictation.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OpenDictation";
+			};
+			name = Release;
+		};
+		E1CD65222F499E0800DCD9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DPN5PTS7D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.calysis.OpenDictationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = OpenDictation;
+			};
+			name = Debug;
+		};
+		E1CD65232F499E0800DCD9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3DPN5PTS7D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.calysis.OpenDictationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = OpenDictation;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1CD64F32F499E0700DCD9EC /* Build configuration list for PBXProject "OpenDictation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CD65192F499E0800DCD9EC /* Debug */,
+				E1CD651A2F499E0800DCD9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1CD651B2F499E0800DCD9EC /* Build configuration list for PBXNativeTarget "OpenDictation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CD651C2F499E0800DCD9EC /* Debug */,
+				E1CD651D2F499E0800DCD9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1CD651E2F499E0800DCD9EC /* Build configuration list for PBXNativeTarget "OpenDictationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CD651F2F499E0800DCD9EC /* Debug */,
+				E1CD65202F499E0800DCD9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1CD65212F499E0800DCD9EC /* Build configuration list for PBXNativeTarget "OpenDictationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CD65222F499E0800DCD9EC /* Debug */,
+				E1CD65232F499E0800DCD9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1CD64F02F499E0700DCD9EC /* Project object */;
+}

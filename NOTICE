@@ -1,0 +1,20 @@
+OpenDictation
+Copyright 2026 Robert Balaban
+
+This product includes software developed by third parties:
+
+------------------------------------------------------------------------
+voxtral.c
+------------------------------------------------------------------------
+  Source:    https://github.com/antirez/voxtral.c
+  Author:    Salvatore Sanfilippo (antirez)
+  License:   MIT
+  Vendored:  app/Vendor/voxtral/
+
+  voxtral.c is a from-scratch C implementation of Mistral's Voxtral
+  speech-to-text model and is the on-device transcription engine used
+  by OpenDictation. The vendored copy in app/Vendor/voxtral/ contains
+  local modifications for macOS microphone capture and Metal kernel
+  integration. See app/Vendor/voxtral/LICENSE.upstream for the full
+  upstream MIT License and copyright notice, and
+  app/Vendor/voxtral/README.md for a description of local changes.
