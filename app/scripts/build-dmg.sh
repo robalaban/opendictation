@@ -5,6 +5,34 @@ PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 BUILD_DIR="$PROJECT_DIR/build"
 APP_NAME="OpenDictation"
 
+usage() {
+  echo "Usage: $0 [--tag <version>]"
+  echo "  --tag <version>   Override the version tag (e.g. alpha-0.0.1). Defaults to short git SHA."
+  exit 1
+}
+
+TAG=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --tag)
+      [ $# -ge 2 ] || { echo "ERROR: --tag requires a value"; usage; }
+      TAG="$2"
+      shift 2
+      ;;
+    --tag=*)
+      TAG="${1#--tag=}"
+      shift
+      ;;
+    -h|--help)
+      usage
+      ;;
+    *)
+      echo "ERROR: Unknown argument: $1"
+      usage
+      ;;
+  esac
+done
+
 rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 
@@ -29,9 +57,10 @@ mkdir -p "$DMG_DIR"
 cp -R "$APP_PATH" "$DMG_DIR/"
 ln -s /Applications "$DMG_DIR/Applications"
 
-VERSION=$(git -C "$PROJECT_DIR" rev-parse --short HEAD)
-if ! git -C "$PROJECT_DIR" diff-index --quiet HEAD -- 2>/dev/null; then
-  VERSION="$VERSION-dirty"
+if [ -n "$TAG" ]; then
+  VERSION="$TAG"
+else
+  VERSION=$(git -C "$PROJECT_DIR" rev-parse --short HEAD)
 fi
 DMG_PATH="$BUILD_DIR/$APP_NAME-$VERSION.dmg"
 
