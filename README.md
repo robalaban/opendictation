@@ -5,7 +5,7 @@
 <h1 align="center">OpenDictation</h1>
 
 <p align="center">
-  Fast, invisible dictation for macOS — powered by Mistral's Voxtral model, running entirely on your Mac.
+  Fast, private and secure dictation for macOS — powered by Mistral's Voxtral model, running entirely on your Mac.
 </p>
 
 <p align="center">
