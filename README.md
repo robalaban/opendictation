@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="web/opendictation_small.png" width="128" height="128" alt="OpenDictation icon">
+  <img src="web/public/icon-128.png" width="128" height="128" alt="OpenDictation icon">
 </p>
 
 <h1 align="center">OpenDictation</h1>
